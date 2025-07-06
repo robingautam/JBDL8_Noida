@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean class="org.gfg.beanInheritance.Employee" name="employee, emp, emp2" p:email="robin@paytm.com" p:empcode="34567" parent="person" />
+
+    <bean class="org.gfg.beanInheritance.Person" name="person" p:username="robingautam" />
+
+    <!-- bean aliases-->
+    <alias name="employee" alias="aemp" />
+
+</beans>

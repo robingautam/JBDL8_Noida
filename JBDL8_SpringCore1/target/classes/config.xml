@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- bean definitions here -->
 
@@ -21,20 +25,65 @@
 
     </bean>-->
 
+    <!-- standalone collection-->
+
+    <util:list id="dummy">
+        <value>Hindi</value>
+        <value>English</value>
+    </util:list>
+
     <!-- setter injection -->
 
-  <!--  <bean class="org.gfg.model.Student" name="student">
+    <bean class="org.gfg.model.Student" name="student">
         <property name="id" value="1" />
         <property name="name" value="Robin" />
         <property name="email" value="robin@gmail.com" />
+        <property name="subjects">
+            <!--<list>
+                <value>Hindi</value>
+                <value>English</value>
+                <value>Maths</value>
+            </list>-->
+            <ref bean="dummy" />
+        </property>
+        <property name="marks">
+            <map>
+                <entry key="Hindi" value="78" />
+                <entry key="English" value="88" />
+                <entry key="Maths" value="86" />
+            </map>
+        </property>
+        <property name="set" >
+            <set>
+                <value>23</value>
+                <value>23</value>
+            </set>
+        </property>
+        <property name="address">
+            <ref bean="address" />
+        </property>
+    </bean>
+
+ <!--   <bean class="org.gfg.model.Address" name="address">
+        <property name="street" value="M.V Phase 1" />
+        <property name="city" value="Delhi" />
+        <property name="pincode" value="110091" />
     </bean>-->
+
+    <!--using the p schema or p namespace-->
+    <bean class="org.gfg.model.Address" name="address" p:street="M.V" p:city="delhi" p:pincode="110091" />
 
     <!--  constructor injection -->
 
-    <bean class="org.gfg.model.Student" name="student">
+   <!-- <bean class="org.gfg.model.Student" name="student">
         <constructor-arg value="1" type="int" />
         <constructor-arg value="robin" type="String" />
         <constructor-arg value="robin@gmail.com" type="String"/>
     </bean>
+
+    <bean class="org.gfg.model.TwoSum" name="twosum">
+        <constructor-arg value="10" />
+        <constructor-arg value="20" />
+    </bean>-->
 
 </beans>

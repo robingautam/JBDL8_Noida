@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:annotation-config/>
+
+    <!-- example of autowiring  : byType-->
+
+      <!--  <bean class="org.gfg.autowire.Person" name="person" autowire="byType" >
+            <property name="id" value="1" />
+            <property name="name" value="Robin" />
+            <property name="email" value="robin@gmail.com" />
+        </bean>-->
+
+
+    <!-- example of autowiring  : byType-->
+
+ <!--   <bean class="org.gfg.autowire.Person" name="person" autowire="byName" >
+        <property name="id" value="1" />
+        <property name="name" value="Robin" />
+        <property name="email" value="robin@gmail.com" />
+    </bean>-->
+
+    <!-- example of autowiring  : constructor-->
+
+    <!--<bean class="org.gfg.autowire.Person" name="person" autowire="constructor" >
+        <property name="id" value="1" />
+        <property name="name" value="Robin" />
+        <property name="email" value="robin@gmail.com" />
+    </bean>-->
+
+    <bean class="org.gfg.autowire.Person" name="person">
+        <property name="id" value="1" />
+        <property name="name" value="Robin" />
+        <property name="email" value="robin@gmail.com" />
+    </bean>
+
+
+
+
+      <!--  <bean class="org.gfg.autowire.Address" name="address2">
+            <property name="street" value="M.V" />
+            <property name="city" value="delhi" />
+            <property name="pincode" value="110091" />
+        </bean>
+
+    <bean class="org.gfg.autowire.Address" name="address3">
+        <property name="street" value="M.V 2" />
+        <property name="city" value="delhi 2" />
+        <property name="pincode" value="110091" />
+    </bean>
+
+    <bean class="org.gfg.autowire.Address" name="address">
+        <property name="street" value="M.V 2" />
+        <property name="city" value="delhi 2" />
+        <property name="pincode" value="110091" />
+    </bean>-->
+
+</beans>
