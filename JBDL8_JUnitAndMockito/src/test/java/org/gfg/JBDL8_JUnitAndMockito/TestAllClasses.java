@@ -1,0 +1,9 @@
+package org.gfg.JBDL8_JUnitAndMockito;
+
+import org.junit.platform.suite.api.SelectClasses;
+import org.junit.platform.suite.api.Suite;
+
+@Suite
+@SelectClasses({ObjectModificationTest.class, MathematicsTest.class})
+public class TestAllClasses {
+}
